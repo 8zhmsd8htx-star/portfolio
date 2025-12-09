@@ -58,8 +58,8 @@ body {
     line-height: 1.6;
     padding: 0;
     font-family: 'Almarai', sans-serif;
-    background-color: #f5fef8;
-    color: #6a1fb0;
+    background-color: #000000ef;
+    color: #f5fef8;
     overflow-x: hidden;
 }
 
@@ -94,7 +94,7 @@ p {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 2rem;
+    gap: 6.5rem;
     padding: 1rem 0;
     margin: 0 1rem;
 }
@@ -133,7 +133,7 @@ p {
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
-    height: 100vh;
+    height: 90vh;
     min-height: calc(100vh - 250px);
     display: flex;
     flex-direction: column;
@@ -165,9 +165,9 @@ p {
 }
 
 #hero h1 {
-    font-size: clamp(2.2rem, 6vw, 4rem);
+    font-size: 8rem;
     line-height: 1.05;
-    letter-spacing: 1.3px;
+    letter-spacing: 1.2px;
     margin: 0 0 1rem 0;
     color: #f5fef8;
     text-transform: none;
@@ -194,18 +194,18 @@ p {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    text-decoration: none; /* remove underline */
+    text-decoration: none; 
     -webkit-text-decoration-skip: none;
 }
 
 /* Filled primary button */
 .btn-primary {
     background: #f5fef8;
-    color: #2c2c2ce3; /* page purple */
+    color: #2c2c2ce3;
     border: none;
-    padding: 1rem 1.6rem; /* larger click/tap area */
+    padding: 1rem 1.6rem;
     border-radius: 14px;
-    font-weight: 800; /* stronger emphasis */
+    font-weight: 800;
     font-size: clamp(1.05rem, 1.8vw, 1.25rem);
     cursor: pointer;
     box-shadow: 0 12px 32px rgba(0,0,0,0.14);
@@ -243,7 +243,29 @@ p {
 
 
 /* about section */
+#about {
+    max-height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 1rem;
+    box-sizing: border-box;
+}
 
+#about .about-content {
+    color: #f5fef8;
+    font-family: 'Almarai', sans-serif;
+    font-size: 4rem;
+    font-style: normal;
+    font-weight: 600;
+    height: auto;
+    letter-spacing: 0.1px;
+    line-height: 1.4;
+    white-space: pre-wrap;
+    width: max-content;
+    text-align: left;
+}
 
 
 /* projects section */
