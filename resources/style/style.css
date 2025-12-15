@@ -58,7 +58,7 @@ body {
     line-height: 1.6;
     padding: 0;
     font-family: 'Almarai', sans-serif;
-    background-color: #000000ef;
+    background-color: #000000e3;
     color: #f5fef8;
     overflow-x: hidden;
 }
@@ -133,7 +133,7 @@ p {
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
-    height: 90vh;
+    height: 100vh;
     min-height: calc(100vh - 250px);
     display: flex;
     flex-direction: column;
@@ -159,7 +159,7 @@ p {
     font-size: clamp(0.95rem, 1.6vw, 1.1rem);
     text-transform: uppercase;
     letter-spacing: 2px;
-    color: rgba(189, 189, 189, 0.884);
+    color: rgb(189, 189, 189);
     margin-bottom: 0.6rem;
     font-weight: 600;
 }
@@ -244,11 +244,12 @@ p {
 
 /* about section */
 #about {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
     max-height: 100vh;
     width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     padding: 2rem 1rem;
     box-sizing: border-box;
 }
@@ -256,7 +257,7 @@ p {
 #about .about-content {
     color: #f5fef8;
     font-family: 'Almarai', sans-serif;
-    font-size: 4rem;
+    font-size: 3.7rem;
     font-style: normal;
     font-weight: 600;
     height: auto;
@@ -265,6 +266,24 @@ p {
     white-space: pre-wrap;
     width: max-content;
     text-align: left;
+}
+
+.about-aside {
+    font-size: 1.25rem;
+    font-weight: 400;
+    color: #d1d1d1;
+    line-height: 1.5;
+    text-align: left;
+    white-space: pre-wrap;
+}
+
+/* lift the aside up closer to the about-content; responsive to avoid overlap */
+.about-aside { margin-top: -1.15rem; }
+.about-aside .aside-text { display: block; }
+.about-aside .btn-secondary { margin-top: 1rem; display: inline-flex; }
+
+@media (max-width: 720px) {
+    .about-aside { margin-top: 0.5rem; }
 }
 
 
