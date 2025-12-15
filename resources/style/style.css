@@ -151,8 +151,6 @@ p {
     position: relative;
     left: 0;
     overflow: hidden; /* clip the background and children to rounded corners */
-    border-bottom-left-radius: var(--hero-radius);
-    border-bottom-right-radius: var(--hero-radius);
 }
 
 #hero h2 {
@@ -245,7 +243,6 @@ p {
 /* about section */
 #about {
     display: flex;
-    flex-direction: column;
     align-items: flex-start;
     text-align: left;
     max-height: 100vh;
@@ -266,6 +263,9 @@ p {
     white-space: pre-wrap;
     width: max-content;
     text-align: left;
+    position: relative;
+    margin: 0 auto;
+    right: 22vh;
 }
 
 .about-aside {
@@ -275,17 +275,28 @@ p {
     line-height: 1.5;
     text-align: left;
     white-space: pre-wrap;
+    position: relative;
+    left: 58vh;
+    bottom: 10vh;
+}
+
+.aside-text {
+    font-size: 1.3rem;
+    line-height: 1.5;
+    color: #d1d1d1cc;
+}
+
+.about-aside .btn-secondary {
+    font-size: 1.1rem;
+    padding: 0.75rem 1.25rem;
+    position: relative;
+    left: 2vh;
+    bottom: 6vh;
+    top: 1vh;
 }
 
 /* lift the aside up closer to the about-content; responsive to avoid overlap */
 .about-aside { margin-top: -1.15rem; }
-.about-aside .aside-text { display: block; }
-.about-aside .btn-secondary { margin-top: 1rem; display: inline-flex; }
-
-@media (max-width: 720px) {
-    .about-aside { margin-top: 0.5rem; }
-}
-
 
 /* projects section */
 /* skills section */
