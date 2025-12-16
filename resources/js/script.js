@@ -1,7 +1,19 @@
-// Disable browser scroll restoration
+// Remove any hash on initial load (iOS Safari fix)
+if (window.location.hash) {
+  history.replaceState(
+    null,
+    "",
+    window.location.pathname + window.location.search
+  );
+}
+
 if ("scrollRestoration" in history) {
   history.scrollRestoration = "manual";
 }
+
+window.addEventListener("load", () => {
+  window.scrollTo(0, 0);
+});
 
 // iOS Safari needs multiple passes
 const forceScrollTop = () => {
