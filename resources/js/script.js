@@ -1,3 +1,14 @@
+// Disable browser scroll restoration
+if ("scrollRestoration" in history) {
+  history.scrollRestoration = "manual";
+}
+
+// Force top position when page is shown (including Safari bfcache)
+window.addEventListener("pageshow", () => {
+  window.scrollTo(0, 0);
+});
+
+
 document.addEventListener("DOMContentLoaded", () => {
     const reveals = document.querySelectorAll(".reveal");
 
@@ -37,8 +48,4 @@ mobileMenu.querySelectorAll("a").forEach(link => {
         mobileMenu.classList.remove("is-open");
         document.body.style.overflow = "";
     });
-});
-
-window.addEventListener("load", () => {
-    window.scrollTo(0, 0);
 });
