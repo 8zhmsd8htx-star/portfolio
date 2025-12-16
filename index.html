@@ -10,14 +10,34 @@
         <!-- Header with Navigation -->
         <header>
             <nav class="main-nav">
-                <ul role="navigation">
-                    <li><a href="#about">About me</a></li>
-                    <li><a href="#projects">Work</a></li>
-                    <li><a href="#skills">Skills</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
+                <div class="nav-inner">
+                    <ul class="nav-links">
+                        <li><a href="#about">About me</a></li>
+                        <li><a href="#projects">Work</a></li>
+                        <li><a href="#skills">Skills</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+
+                    <!-- Hamburger -->
+                    <button class="nav-toggle" aria-label="Open menu">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
             </nav>
         </header>
+
+            <!-- Mobile overlay menu -->
+        <div class="mobile-menu">
+            <ul>
+                <li><a href="#about">About me</a></li>
+                <li><a href="#projects">Work</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+
 
         <!-- Main Content -->
         <main>
@@ -34,20 +54,23 @@
 
             <!-- about section -->
             <section id="about">
-                <h2 class="about-content">
-                      I'm a versatile fullstack developer who's
-    passionate for crafting seamless web experiences.
-    With expertise in frontend and backend practices,
-    My applications meet all modern standards.
-                </h2>
-                <aside class="about-aside">
-                    <p class="aside-text">
-                        Bring your vision to life quickly and efficiently — whether
-                        it's clean websites or application — I've got it covered,
-                        ensuring top-notch quality and performance from start to finish.
-                    </p>
-                    <a class="btn-secondary" href="#projects">See my work</a>
-                </aside>
+                <div class="about-grid">
+                    <h2 class="about-content reveal">
+                        I'm a versatile fullstack developer who's passionate for crafting
+                        seamless web experiences. With expertise in frontend and backend
+                        practices, my applications meet all modern standards.
+                    </h2>
+
+                    <div class="about-aside reveal">
+                        <p class="aside-text">
+                            Bring your vision to life quickly and efficiently — whether
+                            it's clean websites or applications — I've got it covered,
+                            ensuring top-notch quality and performance from start to finish.
+                        </p>
+
+                        <a class="btn-secondary" href="#projects">See my work</a>
+                    </div>
+                </div>
             </section>
 
 
@@ -114,7 +137,7 @@
                 </div>
 
                 <div class="skills-grid">
-                    <div class="skill-group">
+                    <div class="skill-group reveal">
                         <h3>Core Technologies</h3>
                         <ul>
                             <li>HTML5 & semantic markup</li>
@@ -123,7 +146,7 @@
                         </ul>
                     </div>
 
-                    <div class="skill-group">
+                    <div class="skill-group reveal">
                         <h3>Design & UI</h3>
                         <ul>
                             <li>Minimalist interface design</li>
@@ -133,7 +156,7 @@
                         </ul>
                     </div>
 
-                    <div class="skill-group">
+                    <div class="skill-group reveal">
                         <h3>Workflow & Approach</h3>
                         <ul>
                             <li>Proficiency working with AI tools</li>
@@ -143,7 +166,7 @@
                         </ul>
                     </div>
 
-                    <div class="skill-group muted">
+                    <div class="skill-group muted reveal">
                         <h3>Currently Learning</h3>
                         <ul>
                             <li>Backend fundamentals</li>
@@ -160,6 +183,6 @@
                 </div>
             </section>
         </main>
-        <script src="./resources/script/script.js" async></script>
+        <script src="./resources/js/script.js" defer></script>
     </body>
 </html>
