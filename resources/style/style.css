@@ -187,49 +187,47 @@ p {
     font-family: 'Almarai', sans-serif;
 }
 
-/* Ensure anchor-based buttons keep their button appearance */
-.btn-primary, .btn-secondary {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none; 
-    -webkit-text-decoration-skip: none;
+/* button base styles */
+.btn-primary,
+.btn-secondary {
+    border-radius: 10px;
+    font-weight: 600;
+    letter-spacing: 0.2px;
+    text-decoration: none;
+    transition: 
+        background 180ms ease,
+        color 180ms ease,
+        transform 160ms ease,
+        box-shadow 160ms ease;
 }
 
-/* Filled primary button */
+/* primary button */
 .btn-primary {
     background: #f5fef8;
-    color: #2c2c2ce3;
-    border: none;
-    padding: 1rem 1.6rem;
-    border-radius: 14px;
-    font-weight: 800;
-    font-size: clamp(1.05rem, 1.8vw, 1.25rem);
-    cursor: pointer;
-    box-shadow: 0 12px 32px rgba(0,0,0,0.14);
-    transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease;
-}
-.btn-primary:hover, .btn-primary:focus {
-    transform: translateY(-3px);
-    box-shadow: 0 18px 42px rgba(0,0,0,0.18);
+    color: #1c1c1c;
+    padding: 0.75rem 1.4rem;
+    font-size: 1rem;
+    box-shadow: 0 10px 24px rgba(0,0,0,0.14);
 }
 
-/* Outlined secondary button (white outline) */
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 16px 32px rgba(0,0,0,0.18);
+}
+
+/* secondary button (white outline) */
 .btn-secondary {
     background: transparent;
     color: #f5fef8;
-    border: 2px solid rgba(255, 255, 255, 0.92);
-    padding: 0.95rem 1.45rem; /* bigger, easier to read */
-    border-radius: 14px;
-    font-weight: 800;
-    font-size: clamp(1rem, 1.6vw, 1.15rem);
-    cursor: pointer;
-    transition: background 180ms ease, color 180ms ease, transform 180ms ease;
+    border: 1.5px solid rgba(255,255,255,0.65);
+    padding: 0.7rem 1.3rem;
+    font-size: 0.95rem;
 }
-.btn-secondary:hover, .btn-secondary:focus {
+
+.btn-secondary:hover {
     background: #f5fef8;
-    color: #6a1fb0;
-    transform: translateY(-3px);
+    color: #1c1c1c;
+    transform: translateY(-2px);
 }
 
 @media (max-width: 640px) {
@@ -436,6 +434,104 @@ p {
 
 
 /* skills section */
+#skills {
+    display: block;
+    max-width: none;
+    padding: 7rem 1rem;
+    text-align: left;
+}
+
+.skills-header {
+    max-width: 1200px;
+    margin: 0 auto 3.5rem auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: end;
+}
+
+.skills-header h2 {
+    font-size: 4.5rem;
+    font-weight: 700;
+}
+
+.skills-header p {
+    font-size: 1.2rem;
+    color: #b5bdb8;
+    max-width: 420px;
+    justify-self: end;
+    line-height: 1.6;
+}
+
+/* skills grid */
+.skills-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
+}
+
+/* skill groups */
+.skill-group h3 {
+    font-size: 1.6rem;
+    margin-bottom: 0.75rem;
+}
+
+.skill-group ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.skill-group li {
+    font-size: 1rem;
+    color: #cfd6d2;
+    padding: 0.45rem 0;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.skill-group li:last-child {
+    border-bottom: none;
+}
+
+/* currently learning */
+.skill-group.muted h3 {
+    color: #9fa6a3;
+}
+
+.skill-group.muted li {
+    color: #9fa6a3;
+}
+
+.skills-cta {
+    margin-top: 4.5rem;
+    display: flex;
+    justify-content: center;
+}
+
+/* mobile adjustments for skills section */
+@media (max-width: 768px) {
+    .skills-header {
+        grid-template-columns: 1fr;
+    }
+
+    .skills-header p {
+        justify-self: start;
+        max-width: none;
+    }
+
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .skills-header h2 {
+        font-size: 3.2rem;
+    }
+}
+
+
+
 /* contact section */
 
 /* Make site sections centered and constrained for cohesive layout */
