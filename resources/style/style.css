@@ -299,6 +299,142 @@ p {
 .about-aside { margin-top: -1.15rem; }
 
 /* projects section */
+#projects {
+    display: block;
+    text-align: left;
+    max-width: none;
+    padding: 7rem 1rem;
+}
+
+.projects-header {
+    max-width: 1200px;
+    margin: 0 auto 2.5rem auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: end;
+}
+
+.projects-header h2 {
+    font-size: 5rem;
+    font-weight: 700;
+    margin: 0;
+}
+
+.projects-subtitle {
+    font-size: 1.2rem;
+    color: #b5bdb8;
+    max-width: 420px;
+    justify-self: end;
+    line-height: 1.6;
+}
+
+/* divider */
+.projects-divider {
+    max-width: 1200px;
+    margin: 0 auto 3.5rem auto;
+    height: 1px;
+    background: linear-gradient(
+        to right,
+        transparent,
+        #6a1fb0,
+        transparent
+    );
+    opacity: 0.85;
+}
+
+.projects-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.75rem;
+}
+
+.project-card {
+    border-radius: 20px;
+    overflow: hidden;
+    transition: transform 220ms ease, box-shadow 220ms ease;
+    background: linear-gradient(
+        180deg,
+        #141818 0%,
+        #0f1212 100%
+    );
+}
+
+.project-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 20px rgba(0,0,0,25%);
+}
+
+.project-card img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    display: block;
+    filter: saturate(0.95) contrast(1.05);
+}
+
+.project-wide {
+    grid-column: span 2;
+}
+
+.project-content {
+    padding: 1.25rem 1.5rem 1.6rem;
+}
+
+.project-content h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.4rem;
+}
+
+.project-content p {
+    font-size: 1rem;
+    color: #d1d1d1;
+    margin-bottom: 0.9rem;
+}
+
+/* card tags */
+.project-tags {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.project-tags span {
+    font-size: 0.75rem;
+    padding: 0.35rem 0.65rem;
+    border-radius: 999px;
+    background: #1f2424;
+    color: #cfd6d2;
+    font-family: 'Helvetica Neue', sans-serif;
+    letter-spacing: 0.5px;
+}
+
+/* mobile adjustments for projects section */
+@media (max-width: 768px) {
+    .projects-header {
+        grid-template-columns: 1fr;
+    }
+
+    .projects-subtitle {
+        justify-self: start;
+        max-width: none;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .project-wide {
+        grid-column: span 1;
+    }
+
+    .projects-header h2 {
+        font-size: 3.2rem;
+    }
+}
+
+
 /* skills section */
 /* contact section */
 
