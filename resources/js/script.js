@@ -3,10 +3,26 @@ if ("scrollRestoration" in history) {
   history.scrollRestoration = "manual";
 }
 
-// Force top position when page is shown (including Safari bfcache)
-window.addEventListener("pageshow", () => {
+// iOS Safari needs multiple passes
+const forceScrollTop = () => {
   window.scrollTo(0, 0);
+  requestAnimationFrame(() => {
+    window.scrollTo(0, 0);
+  });
+};
+
+// Run on first load
+window.addEventListener("load", () => {
+  setTimeout(forceScrollTop, 0);
 });
+
+// Run when page is restored from cache (mobile Safari)
+window.addEventListener("pageshow", (event) => {
+  if (event.persisted) {
+    setTimeout(forceScrollTop, 0);
+  }
+});
+
 
 
 document.addEventListener("DOMContentLoaded", () => {
