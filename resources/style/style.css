@@ -150,6 +150,9 @@ p {
     border: none;
     cursor: pointer;
     z-index: 1001;
+    position: fixed;
+    top: 40px;
+    right: 1.5rem;
 }
 
 .nav-toggle span {
@@ -159,6 +162,7 @@ p {
     background: #f5fef8;
     margin: 5px 0;
     transition: transform 300ms ease, opacity 200ms ease;
+    transform-origin: center;
 }
 
 .mobile-menu {
@@ -217,12 +221,14 @@ p {
 
     .nav-toggle {
         display: block;
-        position: absolute;
+        position: fixed;
         right: 1.5rem;
         top: 40px;
-        transform: translateY(-50%);
+        z-index: 1001;
+        transform: none;
     }
 }
+
 
 /* hero section */
 
@@ -356,7 +362,6 @@ p {
 /* about section */
 #about {
     padding: 6rem 1rem;
-    height: 100vh;
 }
 
 .about-grid {

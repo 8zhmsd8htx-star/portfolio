@@ -7,36 +7,6 @@ if (window.location.hash) {
   );
 }
 
-if ("scrollRestoration" in history) {
-  history.scrollRestoration = "manual";
-}
-
-window.addEventListener("load", () => {
-  window.scrollTo(0, 0);
-});
-
-// iOS Safari needs multiple passes
-const forceScrollTop = () => {
-  window.scrollTo(0, 0);
-  requestAnimationFrame(() => {
-    window.scrollTo(0, 0);
-  });
-};
-
-// Run on first load
-window.addEventListener("load", () => {
-  setTimeout(forceScrollTop, 0);
-});
-
-// Run when page is restored from cache (mobile Safari)
-window.addEventListener("pageshow", (event) => {
-  if (event.persisted) {
-    setTimeout(forceScrollTop, 0);
-  }
-});
-
-
-
 document.addEventListener("DOMContentLoaded", () => {
     const reveals = document.querySelectorAll(".reveal");
 
@@ -61,19 +31,29 @@ document.addEventListener("DOMContentLoaded", () => {
 const navToggle = document.querySelector(".nav-toggle");
 const mobileMenu = document.querySelector(".mobile-menu");
 
-navToggle.addEventListener("click", () => {
-    navToggle.classList.toggle("is-open");
-    mobileMenu.classList.toggle("is-open");
+let menuOpen = false;
 
-    document.body.style.overflow =
-        mobileMenu.classList.contains("is-open") ? "hidden" : "";
+// Toggle mobile menu
+
+const openMenu = () => {
+    menuOpen = true;
+    navToggle.classList.add("is-open");
+    mobileMenu.classList.add("is-open");
+    document.body.style.overflow = "hidden";
+};
+
+const closeMenu = () => {
+    menuOpen = false;
+    navToggle.classList.remove("is-open");
+    mobileMenu.classList.remove("is-open");
+    document.body.style.overflow = "";
+};
+
+navToggle.addEventListener("click", () => {
+    menuOpen ? closeMenu() : openMenu();
 });
 
 // Close menu when clicking a link
 mobileMenu.querySelectorAll("a").forEach(link => {
-    link.addEventListener("click", () => {
-        navToggle.classList.remove("is-open");
-        mobileMenu.classList.remove("is-open");
-        document.body.style.overflow = "";
-    });
+    link.addEventListener("click", closeMenu);
 });

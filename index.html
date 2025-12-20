@@ -9,26 +9,26 @@
     <body>
         <!-- Header with Navigation -->
         <header>
-            <nav class="main-nav">
-                <div class="nav-inner">
-                    <ul class="nav-links">
-                        <li><a href="#about">About me</a></li>
-                        <li><a href="#projects">Work</a></li>
-                        <li><a href="#skills">Skills</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                    </ul>
-
-                    <!-- Hamburger -->
-                    <button class="nav-toggle" aria-label="Open menu">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </button>
-                </div>
-            </nav>
+        <nav class="main-nav">
+            <div class="nav-inner">
+            <ul class="nav-links">
+                <li><a href="#about">About me</a></li>
+                <li><a href="#projects">Work</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            </div>
+        </nav>
         </header>
 
-            <!-- Mobile overlay menu -->
+        <!-- Hamburger MUST be outside transformed parents -->
+        <button class="nav-toggle" aria-label="Open menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <!-- Mobile overlay menu -->
         <div class="mobile-menu">
             <ul>
                 <li><a href="#about">About me</a></li>
